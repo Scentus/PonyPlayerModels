@@ -1,0 +1,76 @@
+ 
+$collisionjoints  "skeleton\pony_mature\phy.smd"
+{
+	$mass 2
+	$inertia		2.00
+	$damping		0.01
+	$rotdamping		0.40
+	//
+	$jointconstrain "Lrig_LEG_FL_Radius" x limit 0 0.00 1   
+	$jointconstrain "Lrig_LEG_FL_Radius" y limit -20 40.00  1     
+	$jointconstrain "Lrig_LEG_FL_Radius" z limit -30.00 70.00  1     
+	
+	$jointconstrain "Lrig_LEG_FL_Metacarpus" x limit 0 0.00  1   
+	$jointconstrain "Lrig_LEG_FL_Metacarpus" y limit 0 0.00  1     
+	$jointconstrain "Lrig_LEG_FL_Metacarpus" z limit -90.00 0.00  1    
+	
+	$jointconstrain "Lrig_LEG_FL_FrontHoof" x limit 0 0.00  1    
+	$jointconstrain "Lrig_LEG_FL_FrontHoof" y limit -5 -5.00  1   
+	$jointconstrain "Lrig_LEG_FL_FrontHoof" z limit -20.00 20.00  1    
+	//
+	$jointconstrain "Lrig_LEG_FR_Radius" x limit 0 0.00  1  
+	$jointconstrain "Lrig_LEG_FR_Radius" y limit -40 20.00  1  
+	$jointconstrain "Lrig_LEG_FR_Radius" z limit -30.00 70.00  1  
+	
+	$jointconstrain "Lrig_LEG_FR_Metacarpus" x limit 0 0.00  1   
+	$jointconstrain "Lrig_LEG_FR_Metacarpus" y limit 0 0.00  1     
+	$jointconstrain "Lrig_LEG_FR_Metacarpus" z limit -90.00 0.00  1   
+ 	
+	$jointconstrain "Lrig_LEG_FR_FrontHoof" x limit 0 0.00  1   
+	$jointconstrain "Lrig_LEG_FR_FrontHoof" y limit -5 -5.00  1    
+	$jointconstrain "Lrig_LEG_FR_FrontHoof" z limit -20.00 20.00 1    
+	//
+	
+	$jointconstrain "Lrig_LEG_BL_Femur" x limit 0 0.00  1   
+	$jointconstrain "Lrig_LEG_BL_Femur" y limit -5 5  1   
+	$jointconstrain "Lrig_LEG_BL_Femur" z limit -70.00 60.00  1   
+	
+	$jointconstrain "Lrig_LEG_BL_Tibia" x limit 0 0.00  1    
+	$jointconstrain "Lrig_LEG_BL_Tibia" y limit 0 0  1  
+	$jointconstrain "Lrig_LEG_BL_Tibia" z limit -60.00 90.00  1  
+	
+	$jointconstrain "Lrig_LEG_BL_LargeCannon" x limit 0 0.00  1  
+	$jointconstrain "Lrig_LEG_BL_LargeCannon" y limit 0 0  1  
+	$jointconstrain "Lrig_LEG_BL_LargeCannon" z limit -40.00 90.00  1  
+	
+	$jointconstrain "Lrig_LEG_BL_RearHoof" x limit 0 0.00 1 
+	$jointconstrain "Lrig_LEG_BL_RearHoof" y limit -5 -5.00 1  
+	$jointconstrain "Lrig_LEG_BL_RearHoof" z limit -20.00 20.00 1 
+	//
+	$jointconstrain "Lrig_LEG_BR_Femur" x limit 0 0.00 1 
+	$jointconstrain "Lrig_LEG_BR_Femur" y limit -5 5 1.00   
+	$jointconstrain "Lrig_LEG_BR_Femur" z limit -70.00 60.00 1.00  
+	
+	$jointconstrain "Lrig_LEG_BR_Tibia" x limit 0 0.00 1.00  
+	$jointconstrain "Lrig_LEG_BR_Tibia" y limit 0 0 1.00   
+	$jointconstrain "Lrig_LEG_BR_Tibia" z limit -60.00 90.00 1.00  
+	
+	$jointconstrain "Lrig_LEG_BR_LargeCannon" x limit 0 0.00 1.00  
+	$jointconstrain "Lrig_LEG_BR_LargeCannon" y limit 0 0 1.00   
+	$jointconstrain "Lrig_LEG_BR_LargeCannon" z limit -40.00 90.00 1.00  
+	
+	$jointconstrain "Lrig_LEG_BR_RearHoof" x limit 0 0.00 1.00  
+	$jointconstrain "Lrig_LEG_BR_RearHoof" y limit -5 -5.00 1.00   
+	$jointconstrain "Lrig_LEG_BR_RearHoof" z limit -20.00 20.00 1.00  
+	//
+	
+	$jointconstrain "LrigNeck2" x limit -20 20.00 1.00  
+	$jointconstrain "LrigNeck2" y limit -20 20.00 1.00   
+	$jointconstrain "LrigNeck2" z limit -20.00 20.00 1.00  
+	
+	$jointconstrain "LrigScull" x limit -20 20.00 1.00  
+	$jointconstrain "LrigScull" y limit -20 20.00 1.00   
+	$jointconstrain "LrigScull" z limit -20.00 20.00 1.00  
+	//
+	$concave
+} 

@@ -1,0 +1,119 @@
+
+$lockbonelengths
+$definebone "LRigPelvis" "" -0.000006 1.376469 59.433640 2.120154 -90.000017 -90.000017 0.000000 0.000000 0.000000 -0.000000 0.000000 0.000000
+$definebone "LRigSpine1" "LRigPelvis" 0.000000 0.000000 0.000000 -0.000000 -12.208585 0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000 0.000000
+$definebone "LRigSpine2" "LRigSpine1" 9.908167 0.000000 -0.000000 0.000000 -6.001388 0.000000 0.000000 0.000000 -0.000000 0.000000 0.000000 0.000000
+$definebone "LRigRibcage" "LRigSpine2" 9.908163 -0.000004 -0.000001 0.000000 16.454433 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+$definebone "LRigNeck1" "LRigRibcage" 0.000000 0.000000 0.000000 0.000000 -74.950501 -0.000000 0.000000 0.000000 0.000000 0.000000 -0.000000 -0.000000
+$definebone "LRigNeck2" "LRigNeck1" 10.181648 -0.000002 -0.000000 0.000000 -3.719472 0.000000 0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000
+$definebone "LRigNeck3" "LRigNeck2" 9.946869 -0.000005 -0.000000 0.000000 10.675751 0.000000 0.000008 0.000000 0.000000 0.000000 -0.000000 0.000000
+$definebone "LRigScull" "LRigNeck3" 9.042999 0.000000 -0.000000 -0.000000 89.271755 0.000000 -0.000002 0.000000 0.000000 -0.000000 0.000000 0.000000
+$definebone "LRig_LEG_BR_Femur" "LRigPelvis" -4.758852 3.826103 -6.719940 4.342602 102.736811 -178.022162 0.000000 -0.000002 0.000001 -0.000000 0.000001 -0.000000
+$definebone "LRig_LEG_BR_Tibia" "LRig_LEG_BR_Femur" 15.525600 0.000006 0.000005 0.557832 -26.913778 0.770915 0.000000 0.000000 0.000000 -0.000000 -0.000005 0.000000
+$definebone "LRig_LEG_BR_LargeCannon" "LRig_LEG_BR_Tibia" 9.870101 0.000008 -0.000004 -0.294959 21.328410 -2.386599 -0.000002 0.000002 0.000001 -0.000000 -0.000002 0.000000
+$definebone "LRig_LEG_BR_PhalanxPrima" "LRig_LEG_BR_LargeCannon" 27.112719 0.000002 0.000001 -1.777831 50.445046 11.280507 0.000000 0.000000 0.000000 0.000001 0.000006 0.000000
+$definebone "LRig_LEG_BR_RearHoof" "LRig_LEG_BR_PhalanxPrima" 5.423474 0.375158 0.034276 0.077408 -26.995244 -0.039421 -0.000000 0.000000 0.000000 0.000001 0.000006 -0.000003
+$definebone "LRig_LEG_BL_Femur" "LRigPelvis" -4.758852 3.826099 6.719941 -4.342602 102.736763 178.022162 0.000004 0.000000 -0.000001 -0.000000 -0.000000 0.000000
+$definebone "LRig_LEG_BL_Tibia" "LRig_LEG_BL_Femur" 15.525604 0.000006 -0.000002 -0.557774 -26.913835 -0.770915 0.000000 0.000000 0.000001 0.000000 -0.000001 0.000000
+$definebone "LRig_LEG_BL_LargeCannon" "LRig_LEG_BL_Tibia" 9.870100 0.000004 0.000008 0.314496 21.329788 2.388718 0.000000 -0.000002 0.000000 0.000000 0.000001 -0.000001
+$definebone "LRig_LEG_BL_PhalanxPrima" "LRig_LEG_BL_LargeCannon" 27.112724 0.000004 0.000002 1.678480 50.444697 -11.296952 0.000000 0.000000 0.000000 -0.000001 0.000005 0.000003
+$definebone "LRig_LEG_BL_RearHoof" "LRig_LEG_BL_PhalanxPrima" 5.423474 0.375158 -0.034280 0.000000 -26.978575 0.000003 0.000000 0.000002 0.000000 0.000000 0.000003 0.000003
+$definebone "LRig_LEG_FL_Scapula" "LRigRibcage" -2.061277 -0.761711 3.044797 -14.111205 87.344836 -160.781699 0.000004 0.000000 -0.000002 -0.000001 -0.000000 0.000000
+$definebone "LRig_LEG_FL_Humerus" "LRig_LEG_FL_Scapula" 10.918289 -0.000002 -0.000002 -16.315773 -20.602357 -12.279917 0.000000 0.000000 0.000000 0.000002 -0.000002 0.000001
+$definebone "LRig_LEG_FL_Radius" "LRig_LEG_FL_Humerus" 10.396618 -0.000001 -0.000001 -0.256340 21.027199 -0.895131 -0.000004 0.000001 0.000000 0.000001 -0.000007 0.000001
+$definebone "LRig_LEG_FL_Metacarpus" "LRig_LEG_FL_Radius" 15.102282 -0.000004 -0.000003 0.290834 5.518550 -2.751686 0.000000 0.000000 0.000000 0.000001 -0.000008 0.000001
+$definebone "LRig_LEG_FL_PhalangesManus" "LRig_LEG_FL_Metacarpus" 21.873384 -0.000002 0.000003 2.182225 19.591652 -12.795750 0.000000 0.000000 0.000000 0.000002 -0.000006 0.000003
+$definebone "LRig_LEG_FL_FrontHoof" "LRig_LEG_FL_PhalangesManus" 5.243944 -0.490225 -0.046452 -0.637012 -27.205702 -1.505730 0.000000 0.000000 0.000000 0.000003 -0.000005 0.000000
+$definebone "LRig_LEG_FR_Scapula" "LRigRibcage" -2.061278 -0.761719 -3.044796 14.111205 87.344836 160.781699 0.000000 0.000000 0.000002 -0.000000 0.000000 -0.000003
+$definebone "LRig_LEG_FR_Humerus" "LRig_LEG_FR_Scapula" 10.918297 -0.000003 0.000000 16.316919 -20.605506 12.278828 0.000000 0.000000 0.000000 -0.000001 0.000004 -0.000001
+$definebone "LRig_LEG_FR_Radius" "LRig_LEG_FR_Humerus" 10.396614 0.000000 0.000000 0.255481 21.040844 0.895188 0.000004 -0.000001 -0.000001 -0.000001 -0.000001 -0.000001
+$definebone "LRig_LEG_FR_Metacarpus" "LRig_LEG_FR_Radius" 15.102278 -0.000001 0.000000 -0.290433 5.488305 2.751744 0.000000 0.000001 0.000000 -0.000000 -0.000001 -0.000001
+$definebone "LRig_LEG_FR_PhalangesManus" "LRig_LEG_FR_Metacarpus" 21.873381 -0.000001 0.000002 -2.178901 19.667407 12.793861 0.000000 0.000000 0.000000 -0.000000 -0.000001 -0.000001
+$definebone "LRig_LEG_FR_FrontHoof" "LRig_LEG_FR_PhalangesManus" 5.243938 -0.490225 0.046452 0.623721 -27.259555 1.512607 0.000000 0.000000 -0.000000 -0.000001 0.000003 -0.000002
+
+
+
+$collisionjoints  "skeleton\pony_high\phy.smd"
+{
+	$mass 2
+	$inertia		2.00
+	$damping		0.01
+	$rotdamping		0.40
+	//
+	$jointconstrain "Lrig_LEG_FL_Radius" x limit 0 0.00 1   
+	$jointconstrain "Lrig_LEG_FL_Radius" y limit -20 40.00  1     
+	$jointconstrain "Lrig_LEG_FL_Radius" z limit -30.00 70.00  1     
+	
+	$jointconstrain "Lrig_LEG_FL_Metacarpus" x limit 0 0.00  1   
+	$jointconstrain "Lrig_LEG_FL_Metacarpus" y limit 0 0.00  1     
+	$jointconstrain "Lrig_LEG_FL_Metacarpus" z limit -90.00 0.00  1    
+	
+	$jointconstrain "Lrig_LEG_FL_FrontHoof" x limit 0 0.00  1    
+	$jointconstrain "Lrig_LEG_FL_FrontHoof" y limit -5 -5.00  1   
+	$jointconstrain "Lrig_LEG_FL_FrontHoof" z limit -20.00 20.00  1    
+	//
+	$jointconstrain "Lrig_LEG_FR_Radius" x limit 0 0.00  1  
+	$jointconstrain "Lrig_LEG_FR_Radius" y limit -40 20.00  1  
+	$jointconstrain "Lrig_LEG_FR_Radius" z limit -30.00 70.00  1  
+	
+	$jointconstrain "Lrig_LEG_FR_Metacarpus" x limit 0 0.00  1   
+	$jointconstrain "Lrig_LEG_FR_Metacarpus" y limit 0 0.00  1     
+	$jointconstrain "Lrig_LEG_FR_Metacarpus" z limit -90.00 0.00  1   
+ 	
+	$jointconstrain "Lrig_LEG_FR_FrontHoof" x limit 0 0.00  1   
+	$jointconstrain "Lrig_LEG_FR_FrontHoof" y limit -5 -5.00  1    
+	$jointconstrain "Lrig_LEG_FR_FrontHoof" z limit -20.00 20.00 1    
+	//
+	
+	$jointconstrain "Lrig_LEG_BL_Femur" x limit 0 0.00  1   
+	$jointconstrain "Lrig_LEG_BL_Femur" y limit -5 5  1   
+	$jointconstrain "Lrig_LEG_BL_Femur" z limit -70.00 60.00  1   
+	
+	$jointconstrain "Lrig_LEG_BL_Tibia" x limit 0 0.00  1    
+	$jointconstrain "Lrig_LEG_BL_Tibia" y limit 0 0  1  
+	$jointconstrain "Lrig_LEG_BL_Tibia" z limit -60.00 90.00  1  
+	
+	$jointconstrain "Lrig_LEG_BL_LargeCannon" x limit 0 0.00  1  
+	$jointconstrain "Lrig_LEG_BL_LargeCannon" y limit 0 0  1  
+	$jointconstrain "Lrig_LEG_BL_LargeCannon" z limit -40.00 90.00  1  
+	
+	$jointconstrain "Lrig_LEG_BL_RearHoof" x limit 0 0.00 1 
+	$jointconstrain "Lrig_LEG_BL_RearHoof" y limit -5 -5.00 1  
+	$jointconstrain "Lrig_LEG_BL_RearHoof" z limit -20.00 20.00 1 
+	//
+	$jointconstrain "Lrig_LEG_BR_Femur" x limit 0 0.00 1 
+	$jointconstrain "Lrig_LEG_BR_Femur" y limit -5 5 1.00   
+	$jointconstrain "Lrig_LEG_BR_Femur" z limit -70.00 60.00 1.00  
+	
+	$jointconstrain "Lrig_LEG_BR_Tibia" x limit 0 0.00 1.00  
+	$jointconstrain "Lrig_LEG_BR_Tibia" y limit 0 0 1.00   
+	$jointconstrain "Lrig_LEG_BR_Tibia" z limit -60.00 90.00 1.00  
+	
+	$jointconstrain "Lrig_LEG_BR_LargeCannon" x limit 0 0.00 1.00  
+	$jointconstrain "Lrig_LEG_BR_LargeCannon" y limit 0 0 1.00   
+	$jointconstrain "Lrig_LEG_BR_LargeCannon" z limit -40.00 90.00 1.00  
+	
+	$jointconstrain "Lrig_LEG_BR_RearHoof" x limit 0 0.00 1.00  
+	$jointconstrain "Lrig_LEG_BR_RearHoof" y limit -5 -5.00 1.00   
+	$jointconstrain "Lrig_LEG_BR_RearHoof" z limit -20.00 20.00 1.00  
+	//
+	
+	$jointconstrain "LrigNeck2" x limit -20 20.00 1.00  
+	$jointconstrain "LrigNeck2" y limit -20 20.00 1.00   
+	$jointconstrain "LrigNeck2" z limit -20.00 20.00 1.00  
+	
+	$jointconstrain "LrigScull" x limit -20 20.00 1.00  
+	$jointconstrain "LrigScull" y limit -20 20.00 1.00   
+	$jointconstrain "LrigScull" z limit -20.00 20.00 1.00  
+	//
+	$concave
+}
+
+$attachment "forward" "LrigScull" 0.00 0.00 0.00 rotate 0 -10 90
+$attachment "anim_attachment_RH" "LrigRibcage" 70.00 0.00 -10.00 rotate -90.00 -90.00 0.00
+$attachment "anim_attachment_LH" "LrigRibcage" 70.00 0.00 10.00 rotate -90.00 -90.00 0.00
+$attachment "physgun_attachment" "LrigRibcage" 70.00 0.00 0.00 rotate -90.00 -90.00 0.00
+$attachment "righthand" "LrigRibcage" 70.00 0.00 -10.00 rotate -90.00 -90.00 0.00
+$attachment "lefthand" "LrigRibcage" 70.00 0.00 10.00 rotate -90.00 -90.00 0.00
+
+$attachment "eyes" "LrigScull" 15 0 -0.00 rotate 0 -10 90  
