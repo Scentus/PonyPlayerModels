@@ -1,0 +1,11 @@
+$definemacro ITEM_CREATE FILENAME SMDNAME  \\  
+$cd "C:\modelsrc_pony\pony"  \\
+$scale 0.42 //0.375 //invert: 2,380952380952381  \\
+$modelname $FILENAME$  \\
+$model "default" $SMDNAME$  \\
+$cdmaterials "models\ppm\clothes\"  \\
+$sequence _noref $SMDNAME$ fps 30.000000 \\
+   
+ 
+ 
+ 

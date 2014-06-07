@@ -1,0 +1,62 @@
+
+	
+$definemacro crtmove seqname animbasis action fps \\ 
+ $sequence $seqname$ {  \\
+	$animbasis$_sw	$animbasis$_w	$animbasis$_nw \\
+	$animbasis$_s 	$animbasis$_c	$animbasis$_n \\
+	$animbasis$_se	$animbasis$_e	$animbasis$_ne \\
+	blendwidth 3 \\  
+	blend move_x -1 1 \\
+	blend move_y -1 1 \\ 
+	loop $action$ 1 \\
+	fps 30\\  
+}\\
+$continue $seqname$\\
+//    141.421
+
+
+$definemacro crtidlers name seqname action fpsc \\ 
+$sequence $name$_all $seqname$ loop $action$ 1 fps $fpsc$\\ 
+$sequence $name$_ar2 $seqname$ loop $action$_AR2 1 fps $fpsc$\\ 
+$sequence $name$_cam $seqname$ loop $action$_CAMERA 1 fps $fpsc$\\ 
+$sequence $name$_cro $seqname$ loop $action$_CROSSBOW 1 fps $fpsc$\\ 
+$sequence $name$_due $seqname$ loop $action$_DUEL 1 fps $fpsc$\\ 
+$sequence $name$_fis $seqname$ loop $action$_FIST 1 fps $fpsc$\\ 
+$sequence $name$_knf $seqname$ loop $action$_KNIFE 1 fps $fpsc$\\ 
+$sequence $name$_gre $seqname$ loop $action$_GRENADE 1 fps $fpsc$\\ 
+$sequence $name$_mag $seqname$ loop $action$_MAGIC 1 fps $fpsc$\\ 
+$sequence $name$_me1 $seqname$ loop $action$_MELEE 1 fps $fpsc$\\ 
+$sequence $name$_me2 $seqname$ loop $action$_MELEE2 1 fps $fpsc$\\ 
+$sequence $name$_pas $seqname$ loop $action$_PASSIVE 1 fps $fpsc$\\ 
+$sequence $name$_pis $seqname$ loop $action$_PISTOL 1 fps $fpsc$\\ 
+$sequence $name$_phy $seqname$ loop $action$_PHYSGUN 1 fps $fpsc$\\ 
+$sequence $name$_rev $seqname$ loop $action$_REVOLVER 1 fps $fpsc$\\ 
+$sequence $name$_rpg $seqname$ loop $action$_RPG 1 fps $fpsc$\\ 
+$sequence $name$_sho $seqname$ loop $action$_SHOTGUN 1 fps $fpsc$\\ 
+$sequence $name$_sla $seqname$ loop $action$_SLAM 1 fps $fpsc$\\ 
+$sequence $name$_smg $seqname$ loop $action$_SMG1 1 fps $fpsc$\\ 
+$sequence $name$_mea $seqname$ loop $action$_MELEE_ANGRY 1 fps $fpsc$\\ 
+$sequence $name$_sui $seqname$ loop $action$_SUITCASE 1 fps $fpsc$\\ 
+
+$definemacro crtmoves name seqname action fpsc \\ 
+$crtmove $name$_all $seqname$ $action$ $fpsc$\\  
+$crtmove $name$_ar2 $seqname$ $action$_AR2 $fpsc$\\ 
+$crtmove $name$_cam $seqname$ $action$_CAMERA $fpsc$\\ 
+$crtmove $name$_cro $seqname$ $action$_CROSSBOW $fpsc$\\ 
+$crtmove $name$_due $seqname$ $action$_DUEL $fpsc$\\ 
+$crtmove $name$_fis $seqname$ $action$_FIST $fpsc$\\ 
+$crtmove $name$_knf $seqname$ $action$_KNIFE $fpsc$\\ 
+$crtmove $name$_gre $seqname$ $action$_GRENADE $fpsc$\\ 
+$crtmove $name$_mag $seqname$ $action$_MAGIC $fpsc$\\ 
+$crtmove $name$_me1 $seqname$ $action$_MELEE $fpsc$\\ 
+$crtmove $name$_me2 $seqname$ $action$_MELEE2 $fpsc$\\ 
+$crtmove $name$_pas $seqname$ $action$_PASSIVE $fpsc$\\ 
+$crtmove $name$_pis $seqname$ $action$_PISTOL $fpsc$\\ 
+$crtmove $name$_phy $seqname$ $action$_PHYSGUN $fpsc$\\ 
+$crtmove $name$_rev $seqname$ $action$_REVOLVER $fpsc$\\ 
+$crtmove $name$_rpg $seqname$ $action$_RPG $fpsc$\\ 
+$crtmove $name$_sho $seqname$ $action$_SHOTGUN $fpsc$\\ 
+$crtmove $name$_sla $seqname$ $action$_SLAM $fpsc$\\ 
+$crtmove $name$_smg $seqname$ $action$_SMG1 $fpsc$\\ 
+$crtmove $name$_mea $seqname$ $action$_MELEE_ANGRY $fpsc$\\ 
+$crtmove $name$_sui $seqname$ $action$_SUITCASE $fpsc$\\ 
