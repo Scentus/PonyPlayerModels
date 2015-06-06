@@ -1,0 +1,55 @@
+Changelog:
+
+6/5/2015 - Cache Bugfix
+-Created workaround for bad timer bug in latest GMOD version
+
+7/30/2014 - Minor Bugfix
+-Fixed giant buildings in the editor
+
+4/10/2014 - Minor Bugfix
+-Fixed duplicate requests occuring on busy servers for fully cached players
+
+4/10/2014 - Minor Bugfix
+-Fixed a rare case in which a player could end up in a queue twice if they died while waiting for a response
+-Improved ability of cache to clean up dead entries in server memory
+
+4/9/2014 - Minor Bugfix
+-Fixed occasional overabundance of white ponies (to a certain extent, you still need to go through initial caching)
+
+4/9/2014 - Network and Ponymark Overhaul
+-Completely rewrote pony mod networking code from the ground up. Added in a cache system to greatly reduce the number of transfers that need to be made, added message grouping with compression to reduce the amount of redundent information that needs to be sent, made transfers rate-limited and able to be split into multiple parts and later rejoined to prevent pony mod networking from interfering with more important short-term network messages (like chat messages and such), and added message prioritization to improve overall experience as much as possible
+-Added alpha support to custom pony marks (will get rid of purple border some have experienced too, though if your image had a purple background you would want to make it transparent instead)
+-Removed some limitations on the amount of area available for pony marks
+-Custom pony marks now save with your OC (remember to click apply after selecting a custom pony mark though)
+-Custom pony marks now properly copy to NPC's, ragdolls
+-Custom pony marks now properly appear on dead ponies
+-Clamped pony sizing values in rendering code
+-Changed prototype of 'OnPonyChanged' hook from func( entity ) to func( entity, ponydata )
+
+1/21/2014 - Multiple minor bug fixes plus a major bug fixes
+-Fixes some annoying but overall harmless bugs in the mod that could become more of a problem later.
+-Fixed the pony setup tool's reload function to work properly
+
+12/22/2013 - High playercount bug fixes
+-Fixed some rare bugs that could occur at extremely high player counts (upwards of 50 players or so)
+
+12/22/2013 - Bugfix and small changes release
+-Added server logging of spawned pony ragdolls and npc's.
+-Added 'ppm_restrict_spawns' server console variable to prevent non-admins from spawning pony ragdolls and npc's when enabled. (default disabled)
+-Fixed potential exploit due to bizarre memory issue in suits
+-Added code to networking to prevent constant retrying on ponies with no pony data at all
+-Fixed suit saving to presets (the suit doesn't appear in the clothing slot in the editor after relogging but still shows up in game, this is a bug that existed in Terezi's old version as well and will be fixed in a future update when the clothing system is overhauled)
+-Added a 'OnPonyChanged( entity )' hook that is called after a pony is changed (called serverside only, look at the table returned by PPM.getPonyValues(entity) for current values, do not change these as they have already been sent to all clients ) (doesn't count clothing updates yet, will after the previously mentioned overhaul)
+-Changed names of some suits to avoid stealing names
+
+12/19/2013 - Bugfix release
+-Fixed player disconnects and initial connection lag on crowded servers (other addons may contribute to this as well but it has been minimized on this addon). Note that this may lead to not all ponies being loaded and appearing as white 'clones' for a few moments after connection, simply waiting a few seconds for it to finish loading will remedy this.
+Known bug: 'Suits' (costume overlays) are not working properly, will be fixed in the near future.
+
+12/19/2013 - Initial release
+-Removed all potentially copyright infringing material from the original addon.
+-Removed old editors that have since been replaced
+-Removed redundent preset coding
+-Compacted verbose addon directory structure
+-Rewrote network code (hopefully fixing bugged 'crispy' ponies on crowded servers)
+-Refactored and simplified code structure
