@@ -6,6 +6,7 @@ PPM.MessageNames = { INITIAL_SERVER_UPDATE = 0, ITEM_REQUEST = 1, ITEM_PAYLOAD =
 -- Entry Format: entity => { [1] = sig, [2] = parsed data (OC) or data (MARK) }
 PPM.PonyData = PPM.PonyData or {}
 PPM.MarkData = PPM.MarkData or {}
+PPM.timerInc = PPM.timerInc or 1
 
 -- Create a modified version of the built in CRC to force inclusion of null characters
 function PPM.DataCRC( data )
@@ -131,6 +132,7 @@ end
 end]]
 
 function PPM.TransmitMessage( payload, ply )
+
     --PrintData(payload, "output" )
     if PPM.OutgoingMessage ~= nil then return end
     local parts = {}
@@ -153,9 +155,9 @@ function PPM.TransmitMessage( payload, ply )
     
     -- Transmit the first part right away
     PPM.TransmitMessagePart( partCount )
-    
     -- Create a timer (extra repetition will attempt to start a new transmission if possible, keeps delay between transfers intact)
-    timer.Create( "PonyTransferTimer", PPM.CacheTransferOptions.PACKET_DELAY, partCount, PPM.TransmitMessagePart )
+    PPM.timerInc = PPM.timerInc + 1 -- Exists to fix the fact that timers with multiple repetitions fail if they don't have a unique name every time
+    timer.Create( "PonyTransferTimer" .. tostring(PPM.timerInc), PPM.CacheTransferOptions.PACKET_DELAY, partCount, PPM.TransmitMessagePart )
 end
 
 -- Note: partCount is only passed in on the first message
@@ -575,7 +577,7 @@ else -- CLIENT
                 table.insert( PPM.UnsatisfiedOCSignatures, { ent, sig } )
             end
         elseif msgType == 1 then -- transfer
-            timer.Destroy( "PonyTimeoutTimer" )
+            timer.Remove( "PonyTimeoutTimer" )
             if net.ReadBit() == 0 then -- new transfer
                 PPM.IncomingMessage = { packetCount = net.ReadUInt( 16 ) }
                 local bodySize = net.ReadUInt( 16 )
@@ -597,7 +599,7 @@ else -- CLIENT
             end
         elseif msgType == 3 then -- client timeout checkup response
             if net.ReadBit() == 0 then -- Everything is fine, restart timer
-                timer.Destroy( "PonyTimeoutTimer" )
+                timer.Remove( "PonyTimeoutTimer" )
                 timer.Create( "PonyTimeoutTimer", PPM.CacheTransferOptions.CLIENT_TIMEOUT, 1, PPM.TransferTimeout )
             else -- Server confirms our worst fears, panic then let it start over the function call at the end
                 ErrorNoHalt( "PPM Transfer timeout triggered. Attempting retry..." )
@@ -634,7 +636,7 @@ else -- CLIENT
             local message = string.char( 1, PPM.MessageNames.INITIAL_SERVER_UPDATE )
             PPM.TransmitMessage( message )
             PPM.IncomingMessage = false
-            timer.Destroy( "PonyTimeoutTimer" )
+            timer.Remove( "PonyTimeoutTimer" )
             timer.Create( "PonyTimeoutTimer", PPM.CacheTransferOptions.CLIENT_TIMEOUT, 1, PPM.TransferTimeout )
         end
         
@@ -771,7 +773,7 @@ else -- CLIENT
         
         -- Prevent any new transmissions til the server responds to this one
         PPM.IncomingMessage = false
-        timer.Destroy( "PonyTimeoutTimer" )
+        timer.Remove( "PonyTimeoutTimer" )
         timer.Create( "PonyTimeoutTimer", PPM.CacheTransferOptions.CLIENT_TIMEOUT, 1, PPM.TransferTimeout )
     end
     
@@ -814,7 +816,7 @@ else -- CLIENT
             local message = string.char( 1, PPM.MessageNames.INITIAL_SERVER_UPDATE )
             PPM.TransmitMessage( message )
             PPM.IncomingMessage = false
-            timer.Destroy( "PonyTimeoutTimer" )
+            timer.Remove( "PonyTimeoutTimer" )
             timer.Create( "PonyTimeoutTimer", PPM.CacheTransferOptions.CLIENT_TIMEOUT, 1, PPM.TransferTimeout )
             
             timer.Create( "PonyRequestTimer", PPM.CacheTransferOptions.UPDATE_DELAY, 0, PPM.RequestUpdate )
