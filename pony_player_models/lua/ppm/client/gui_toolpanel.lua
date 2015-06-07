@@ -1,7 +1,7 @@
 
 function Menu( Panel )
 	Panel:Button(
-		"Character",
+		"Open Pony Editor",
 		"ppm_chared3"
 	)
 	Panel:Button(

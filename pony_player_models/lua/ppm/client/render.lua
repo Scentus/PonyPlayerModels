@@ -49,10 +49,10 @@ end
         local SCALEVAL_tail = math.Clamp( pony.tailsize or 1, 0.8, 1.2 )
         local svts = (SCALEVAL_tail-1)*2+1
         local svtc = (SCALEVAL_tail-1)/2+1
-        PPM:RescaleOFFCETRIGPART(ent,{38},Vector(svtc,svtc,svtc))
+        --PPM:RescaleOFFCETRIGPART(ent,{38},Vector(svtc,svtc,svtc))
         PPM:RescaleRIGPART(ent,{38},Vector(svts,svts,svts))
         
-        PPM:RescaleOFFCETRIGPART(ent,{39,40},Vector(SCALEVAL_tail,SCALEVAL_tail,SCALEVAL_tail))
+        --PPM:RescaleOFFCETRIGPART(ent,{39,40},Vector(SCALEVAL_tail,SCALEVAL_tail,SCALEVAL_tail))
         PPM:RescaleRIGPART(ent,{39,40},Vector(svts,svts,svts))
 			
 			
