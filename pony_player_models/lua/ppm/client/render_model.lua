@@ -2,24 +2,17 @@
 
 if CLIENT then
 
-function PPM:RescaleRIGPART(ent,part,scale)
-	for k , v in pairs(part) do 
-		ent:ManipulateBoneScale( v,scale )  
+	function PPM:RescaleRIGPART(ent,part,scale)
+		for k , v in pairs(part) do 
+			ent:ManipulateBoneScale( v,scale )  
+		end
 	end
-end
-function PPM:RescaleMRIGPART(ent,part,scale)
-	for k , v in pairs(part) do 
-		//ent:ManipulateBoneScale( v,scale ) 
-		ent:ManipulateBonePosition( v, scale )
+	function PPM:RescaleMRIGPART(ent,part,scale)
+		for k , v in pairs(part) do 
+			//ent:ManipulateBoneScale( v,scale ) 
+			ent:ManipulateBonePosition( v, scale )
+		end
 	end
-end
-function PPM:RescaleOFFCETRIGPART(ent,part,scale)
-	for k , v in pairs(part) do 
-		//ent:ManipulateBoneScale( v,scale ) 
-		local thispos = PPM.skeletons.pony_default[v+1].localpos 
-		ent:ManipulateBonePosition( v, thispos *(scale-Vector(1,1,1)) )
-	end
-end
 
 	function PPM.PrePonyDraw(ent, localvals)
 	  
@@ -49,10 +42,8 @@ end
         local SCALEVAL_tail = math.Clamp( pony.tailsize or 1, 0.8, 1.2 )
         local svts = (SCALEVAL_tail-1)*2+1
         local svtc = (SCALEVAL_tail-1)/2+1
-        --PPM:RescaleOFFCETRIGPART(ent,{38},Vector(svtc,svtc,svtc))
         PPM:RescaleRIGPART(ent,{38},Vector(svts,svts,svts))
         
-        --PPM:RescaleOFFCETRIGPART(ent,{39,40},Vector(SCALEVAL_tail,SCALEVAL_tail,SCALEVAL_tail))
         PPM:RescaleRIGPART(ent,{39,40},Vector(svts,svts,svts))
 			
 			
@@ -80,9 +71,6 @@ end
 				end
 			end
 		end
-	end 
-	
-	function PonyPropDraw(ent)
 	end
 	
 	function HOOK_PrePlayerDraw( PLY )
@@ -95,7 +83,8 @@ end
         end
         PPM.PrePonyDraw(PLY,false)  
 		return !PLY:Alive()
-	end    
+	end
+
 	function HOOK_PostPlayerDraw( PLY)
 		if PLY==nil then return end  
 		if !IsValid(PLY) then return end  
@@ -123,6 +112,7 @@ end
 			PPM.m_body:SetTexture("$basetexture",PPM.m_bodyf:GetTexture("$basetexture")) 
 		end
 	end
+	
 	function HOOK_PostDrawOpaqueRenderables()
 	//PPM.bones_testDraw("pony_mature") 	
 					//			MsgN("Ponies:")
@@ -208,12 +198,10 @@ end
 			end
 		end
 	end
-	
-    function HOOK_PostDrawTranslucentRenderables()
-	end
     
 	function OnReloaded( ) 
 	end
+
 	hook.Add("PostDrawOpaqueRenderables","test_Redraw",HOOK_PostDrawOpaqueRenderables)
 	hook.Add("PrePlayerDraw","pony_draw",HOOK_PrePlayerDraw) 
 	hook.Add("PostPlayerDraw","pony_postdraw",HOOK_PostPlayerDraw)
